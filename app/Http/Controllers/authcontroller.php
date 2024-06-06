@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\registration;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class authcontroller extends Controller
 {
@@ -11,15 +13,29 @@ class authcontroller extends Controller
      */
     public function index()
     {
+        return view('login');
+    }
+    public function registration()
+    {
         return view('registration');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Registration $request)
     {
-        //
+        $validation=$request->validated();
+        User::create(
+            $validation
+        );
+        //dd($validation);
+        return to_route('auth.login')->withErrors([
+
+            // "name" => ["Entrez votre nom"],
+            // "postName" => ["Entrez votre postnom"],
+        ]);
+        //dd($validation);
     }
 
     /**

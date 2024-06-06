@@ -4,8 +4,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authcontroller;
 
-Route::get('/', [authcontroller::class, 'index']);
-
+Route::prefix('/')->name('auth.')->group(function(){
+    Route::get('/', [authcontroller::class, 'index'])->name('login');
+    Route::get('/registration', [authcontroller::class, 'registration'])->name('registration');
+    Route::post('/registration', [authcontroller::class, 'create']);
+});
 
 
 Route::get('/dashboard', function () {

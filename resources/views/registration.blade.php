@@ -15,38 +15,69 @@
                 <div class="card-body p-4 p-lg-5 text-black">
 
                   <form method="post">
+                    @csrf
                   
                     <div class="d-flex align-items-center mb-3 pb-1">
                       <i class="fas fa-cubes fa-2x me-3" style="color: #495479;"></i>
-                      <span class="h1 fw-bold mb-0">Online Shoping</span>
+                      <span class="h1 fw-bold mb-0">Régistration</span>
                     </div>
 
-                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Authentifiez-vous pour Commencer</h5>
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Fournissez vos Informations</h5>
 
-                                <div class="form-outline mb-4">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example17">Nom</label>
+                        <input type="text" name="name" id="form2Example17" class="form-control form-control-lg" />
+                        @error('name')
+                          {{$message}}
+                        @enderror
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example17">Postnom</label>
+                        <input type="text" name="postName" id="form2Example17" class="form-control form-control-lg" />
+                        @error('postName')
+                          {{$message}}
+                        @enderror
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example17">Phone</label>
+                        <input type="text" name="phone" id="form2Example17" class="form-control form-control-lg" />
+                        @error('phone')
+                          {{$message}}
+                        @enderror
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example17">Adresse</label>
+                        <input type="text" name="adresse" id="form2Example17" class="form-control form-control-lg" />
+                        @error('adresse')
+                          {{$message}}
+                        @enderror
+                    </div>
+
+                    <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example17">Email address</label>
-                        <input type="email" name="email" id="form2Example17"
-                            class="form-control form-control-lg" />
-                          
+                        <input type="email" name="email" id="form2Example17" class="form-control form-control-lg" />
+                        @error('email')
+                          {{$message}}
+                        @enderror
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example27">Password</label>
-                        <input type="password" name="password" id="form2Example27"
-                            class="form-control form-control-lg" />
-
-                 
+                        <input type="password" name="password" id="form2Example27" class="form-control form-control-lg" />
+                        @error('password')
+                          {{$message}}
+                        @enderror
                     </div>
 
                     <div class="pt-1 mb-4">
-                      <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                      <button class="btn btn-dark btn-lg btn-block" type="submit">Enregistrer</button>
                     </div>
 
-                    <a class="small text-muted" href="#!">Forgot password?</a>
-                    <p class="mb-5 pb-lg-2" style="color: #1a2066;">vous n'avez pas un compte? <a href="#"
-                        style="color: #1e267c;">Creer un Compte</a></p>
-                    <a href="#!" class="small text-muted">Terms of use.</a>
-                    <a href="#!" class="small text-muted">Privacy policy</a>
+                    <p class="mb-5 pb-lg-2" style="color: #1a2066;">Avez vous un compte? <a href="#"
+                        style="color: #1e267c;">Connectez-vous</a></p>
                   </form>
 
                 </div>
