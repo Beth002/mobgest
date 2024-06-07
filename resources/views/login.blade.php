@@ -15,7 +15,8 @@
                 <div class="card-body p-4 p-lg-5 text-black">
 
                   <form method="post">
-                  
+                    @csrf
+
                     <div class="d-flex align-items-center mb-3 pb-1">
                       <i class="fas fa-cubes fa-2x me-3" style="color: #495479;"></i>
                       <span class="h1 fw-bold mb-0">LOGIN</span>
@@ -27,15 +28,18 @@
                         <label class="form-label" for="form2Example17">Email address</label>
                         <input type="email" name="email" id="form2Example17"
                             class="form-control form-control-lg" />
-                          
+                            @error('email')
+                            {{$message}}
+                          @enderror
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example27">Password</label>
                         <input type="password" name="password" id="form2Example27"
                             class="form-control form-control-lg" />
-
-                 
+                            @error('password')
+                          {{$message}}
+                        @enderror
                     </div>
 
                     <div class="pt-1 mb-4">

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\registration;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class authcontroller extends Controller
 {
@@ -19,13 +22,27 @@ class authcontroller extends Controller
     {
         return view('registration');
     }
+    // public function home()
+    // {
+    //     return view('home');
+    // }
+    public function login(LoginRequest $request){
+        $credancial = $request -> Validated();
+        if (Auth::attempt($credancial)){
+           $request->session()->regenerate();
+           return redirect()->intended(route('home.index'));
+        }
+        return to_route ('auth.login')->withErrors(
+            ["email" => "Email Invalide"]
+            )->onlyInput('email');
+    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create(Registration $request)
     {
-        $validation=$request->validated();
+        $validation = $request -> validated();
         User::create(
             $validation
         );
@@ -51,7 +68,7 @@ class authcontroller extends Controller
      */
     public function show(string $id)
     {
-       
+
     }
 
     /**
