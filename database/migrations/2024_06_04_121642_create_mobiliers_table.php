@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('adresse');
             $table->double('prix');
             $table->string('taille');
+            $table->string('image');
             $table->timestamps();
         });
     }

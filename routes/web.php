@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authcontroller;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MobilierController;
 
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::prefix('/')->name('auth.')->group(function(){
@@ -15,7 +16,16 @@ Route::prefix('/')->name('auth.')->group(function(){
 
 Route::prefix('/home')->name('home.')->group(function(){
     Route::get('/', [HomeController::class, 'index'])->name('index');
+    // Route::post('/', [HomeController::class, 'index']);
+    Route::get('/mobilier', [MobilierController::class, 'index'])->name('mobilier');
+    Route::post('/mobilier', [MobilierController::class, 'store']);
+    Route::post('/{id}', [MobilierController::class, 'destroy'])->name('destroy');
 });
+
+// Route::prefix('/home')->name('mobiliers.')->group(function(){
+//     Route::get('/', [HomeController::class, 'index'])->name('index');
+
+// });
 
 
 Route::get('/dashboard', function () {

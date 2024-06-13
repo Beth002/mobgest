@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mobiliers;
 
 class HomeController extends Controller
 {
     public function index(){
-        $ListData=["Muhindo","Kami","El"];
-        return view('home', ["listNoms"=>$ListData]);
+        $ListMobiliers=mobiliers::all();
+        return view('home', ['mobiliers'=>$ListMobiliers]);
     }
 }
