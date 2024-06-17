@@ -56,18 +56,7 @@
                                             </div>
                                             <div class="mt-1 mb-0 text-muted small">
                                                 <span>{{$items->taille}}</span>
-                                                {{-- <span class="text-primary"> • </span>
-                                                <span>Light weight</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>Best finish<br /></span> --}}
                                             </div>
-                                            {{-- <div class="mb-2 text-muted small">
-                                                <span>Unique design</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>For men</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>Casual<br /></span>
-                                            </div> --}}
                                             <p class="text-truncate mb-4 mb-md-0">
                                                 {{$items->description}}
                                             </p>
@@ -83,15 +72,14 @@
                                                     class="btn btn-outline-primary btn-sm mt-2" type="submit">
                                                     Modifier
                                                 </button>
-                                            {{-- </div> --}}
                                                 <form method="POST" action="{{route('home.destroy',['id' => $items->id])}}">
                                                     @csrf
-                                            {{-- <div class="d-flex flex-column mt-4"> --}}
+
                                                     <button data-mdb-button-init data-mdb-ripple-init
                                                     class="btn btn-outline-danger btn-sm mt-2" type="submit">
                                                     Supprimer
                                                 </button>
-                                            {{-- </div> --}}
+
                                                 </form>
                                             </div>
                                         </div>

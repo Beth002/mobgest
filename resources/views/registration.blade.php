@@ -16,15 +16,15 @@
 
                   <form method="post">
                     @csrf
-                  
-                    <div class="d-flex align-items-center mb-3 pb-1">
+
+                    <div class="d-flex align-items-center mb-0 pb-1">
                       <i class="fas fa-cubes fa-2x me-3" style="color: #495479;"></i>
                       <span class="h1 fw-bold mb-0">Régistration</span>
                     </div>
 
-                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Fournissez vos Informations</h5>
+                    <h5 class="fw-normal mb-0 pb-3" style="letter-spacing: 1px;">Fournissez vos Informations</h5>
 
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-0">
                         <label class="form-label" for="form2Example17">Nom</label>
                         <input type="text" name="name" id="form2Example17" class="form-control form-control-lg" />
                         @error('name')
@@ -32,7 +32,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-0">
                         <label class="form-label" for="form2Example17">Postnom</label>
                         <input type="text" name="postName" id="form2Example17" class="form-control form-control-lg" />
                         @error('postName')
@@ -40,7 +40,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-0">
                         <label class="form-label" for="form2Example17">Phone</label>
                         <input type="text" name="phone" id="form2Example17" class="form-control form-control-lg" />
                         @error('phone')
@@ -48,7 +48,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-0">
                         <label class="form-label" for="form2Example17">Adresse</label>
                         <input type="text" name="adresse" id="form2Example17" class="form-control form-control-lg" />
                         @error('adresse')
@@ -56,7 +56,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-0">
                         <label class="form-label" for="form2Example17">Email address</label>
                         <input type="email" name="email" id="form2Example17" class="form-control form-control-lg" />
                         @error('email')
@@ -64,7 +64,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-0">
                         <label class="form-label" for="form2Example27">Password</label>
                         <input type="password" name="password" id="form2Example27" class="form-control form-control-lg" />
                         @error('password')
